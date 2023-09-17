@@ -22,11 +22,29 @@
         <li>KM Mobile Developer</li>
         <li>KM Devops</li>
     </ul>
+    Nama : <input type="text" id="nama">
+    <button onclick="getDataInput()">submit</button>
+    <br>
+    <ul id="nama_hero"></ul>
+    <br>
     <button onclick="testfunction()">Test Function</button>
     <p id="pilih_kelas"></p>
     <p class="kelas"></p>
     <p class="kelas"></p>
     <script>
+        let data = []
+        function getDataInput(){
+            const nama_input = document.getElementById ("nama")
+            console.log(nama_input.value)
+            data.push(nama_input.value)
+            console.log(data)
+
+            const node = document.createElement ("li")
+            const value_li = document.createTextNode(nama_input.value)
+            node.appendChild(value_li)
+            document.getElementById("nama_hero").appendChild(node)
+
+        }
         function testfunction(){
             console.log("Function Berjalan")
             const list_pelatihan = document.getElementsByTagName("li")
